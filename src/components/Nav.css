@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     transition-timing-function: ease-in;
-    transition: all 0.1s;
+    transition: all 0.1s; /* 스크롤 내릴 때 변화 시간  */
   }
   
   .nav__black {

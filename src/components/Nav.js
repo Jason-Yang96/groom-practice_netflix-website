@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.css';
+import { useNavigate } from 'react-router-dom';
 const Nav = () => {
 	const [show, setShow] = useState(false);
-
+	const [searchValue, setSearchValue] = useState([]);
+	const navigate = useNavigate();
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > 50) {
@@ -16,6 +18,11 @@ const Nav = () => {
 		};
 	}, []);
 
+	const handleChange = (e) => {
+		setSearchValue(e.target.value);
+		navigate(`/search?q=${e.target.value}`);
+	};
+
 	return (
 		<nav className={`nav ${show && 'nav__black'}`}>
 			<img
@@ -23,6 +30,13 @@ const Nav = () => {
 				alt='nav logo'
 				src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Netflix_2014_logo.svg/225px-Netflix_2014_logo.svg.png'
 				onClick={() => window.location.reload()}
+			/>
+			<input
+				className='nav__input'
+				value={searchValue}
+				onChange={handleChange}
+				type='text'
+				placeholder='영화를 검색해주세요'
 			/>
 			<img
 				className='nav__avatar'
