@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/groom-practice_netflix-website/static/css/main.f70971b1.css",
-    "main.js": "/groom-practice_netflix-website/static/js/main.f4c8c226.js",
+    "main.js": "/groom-practice_netflix-website/static/js/main.bbd21b26.js",
     "static/js/787.2974429c.chunk.js": "/groom-practice_netflix-website/static/js/787.2974429c.chunk.js",
     "index.html": "/groom-practice_netflix-website/index.html",
     "main.f70971b1.css.map": "/groom-practice_netflix-website/static/css/main.f70971b1.css.map",
-    "main.f4c8c226.js.map": "/groom-practice_netflix-website/static/js/main.f4c8c226.js.map",
+    "main.bbd21b26.js.map": "/groom-practice_netflix-website/static/js/main.bbd21b26.js.map",
     "787.2974429c.chunk.js.map": "/groom-practice_netflix-website/static/js/787.2974429c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f70971b1.css",
-    "static/js/main.f4c8c226.js"
+    "static/js/main.bbd21b26.js"
   ]
 }
