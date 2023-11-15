@@ -13,7 +13,7 @@ const Banner = () => {
 
 	const fetchData = async () => {
 		// 현재 상영 중인 영화 정보 가져오기(여러 영화)
-		const request = await axios.get(requests.fetchNetflixOriginals);
+		const request = await axios.get(requests.fetchComedyMovies);
 		// 현재 상영 중인 영화 중 랜덤으로 한 영화의 id값 가져오기
 		const movieId =
 			request.data.results[
