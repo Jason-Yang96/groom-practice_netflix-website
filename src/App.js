@@ -26,11 +26,11 @@ function App() {
 					element={<Layout />}>
 					<Route
 						index
-						element={<MainPage />}
+						element={<MainPage />} // 처음 페이지가 된다.
 					/>
 					<Route
 						path=':movieId'
-						element={<DetailPage />}
+						element={<DetailPage />} //콜론이 사용되는 경우 dynamic한 요소가 된다.
 					/>
 					<Route
 						path='search'

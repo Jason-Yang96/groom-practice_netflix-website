@@ -5,7 +5,7 @@ import requests from '../../api/requests';
 
 export default function MainPage() {
 	return (
-		<div>
+		<>
 			<Banner />
 			<Row
 				title='Netflix Originals'
@@ -48,6 +48,6 @@ export default function MainPage() {
 				id='DM'
 				fetchUrl={requests.fetchDocumentaries}
 			/>
-		</div>
+		</>
 	);
 }

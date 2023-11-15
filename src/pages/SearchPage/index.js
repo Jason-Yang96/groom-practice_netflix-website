@@ -5,11 +5,13 @@ import './SearchPage.css';
 import { useDebounce } from '../../hooks/useDebounce';
 
 export default function SearchPage() {
-	const navigate = useNavigate();
 	const [searchResults, setSearchResults] = useState([]);
+	const navigate = useNavigate();
 	const useQuery = () => {
 		return new URLSearchParams(useLocation().search);
 	};
+
+	// console.log(useQuery());
 	const searchTerm = useQuery().get('q');
 	const debouncedSearchTerm = useDebounce(searchTerm, 500);
 	// console.log(query);
@@ -24,19 +26,18 @@ export default function SearchPage() {
 			const request = await axios.get(
 				`/search/multi?include_adult=false&query=${debouncedSearchTerm}`
 			);
-			console.log('request', request);
+			// console.log('request', request);
 			setSearchResults(request.data.results);
 		} catch (error) {
 			console.log('error', error);
 		}
 	};
 
-	// console.log('useLocation', useLocation());
-
 	const renderSearchResults = () => {
 		return searchResults.length > 0 ? (
 			<section className='search-container'>
 				{searchResults.map((movie) => {
+					//요소를 바로 렌더링 하기 위해서는 소괄호를 사용한다. 근데 다이나믹하게 만들려면? 중괄호지. 근데 여기서 반환값을 요구하네
 					if (
 						movie.backdrop_path !== null &&
 						movie.media_type !== 'person'

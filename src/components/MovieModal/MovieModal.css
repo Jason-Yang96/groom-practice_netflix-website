@@ -25,13 +25,16 @@
   .modal__details {
     font-weight: 600;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    
   }
   .modal__overview {
     font-size: 20px;
     line-height: 1.5;
   }
-  .modal__user-perc {
-    color: #46d369;
+  .modal__user_perc {
+    color: rgb(21, 45, 153) !important;
   }
   .modal::-webkit-scrollbar {
     display: none;

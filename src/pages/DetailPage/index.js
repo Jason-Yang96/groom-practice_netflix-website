@@ -6,7 +6,7 @@ export default function DetailPage() {
 	const [movie, setMovie] = useState([]);
 	const { movieId } = useParams();
 	console.log(movieId);
-	console.log(useParams());
+	console.log('useparams', useParams());
 
 	useEffect(() => {
 		async function fetchData() {
@@ -16,7 +16,7 @@ export default function DetailPage() {
 		fetchData();
 	}, [movieId]);
 
-	if (!movie) return <div>...loading</div>;
+	if (movie.length === 0) return <div>...loading</div>;
 
 	return (
 		<section>

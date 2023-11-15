@@ -8,13 +8,17 @@ const Row = ({ title, fetchUrl, isLargeRow, id }) => {
 	const [movies, setMovies] = useState([]);
 	const [modalOpen, setModalOpen] = useState(false);
 	const [movieSelected, setMovieSelected] = useState({});
+
+	//의존성 배열이 없는 경우에는 처음에 마운트 될 때만 호출이 된다. 있다면? 지정 값이 바뀔 때 다시 호출 된다.
+	//useEffect안에 사용하는 상태나 props가 있다면 deps에 넣어줘야 한다. 그게 규칙이다. 넣지 않으면, 최신 값을 받아서 실행될 수 없다.
 	useEffect(() => {
 		fetchMovieData();
-	}, []);
+	});
 	const fetchMovieData = async () => {
 		const request = await axios.get(fetchUrl);
 		// console.log('request', request);
 		setMovies(request.data.results);
+		// console.log(request.data.results);
 	};
 
 	const handleClick = (movie) => {
@@ -43,7 +47,7 @@ const Row = ({ title, fetchUrl, isLargeRow, id }) => {
 						(
 							movie //바로 렌더링이 되기 위해서는 소괄호 사용
 						) => (
-							<img
+							<img // 각 요소에 대해서 id를 key값으로 부여해야 한다. 안그러면 오류
 								key={movie.id}
 								className={`row__poster ${
 									isLargeRow && 'row__posterLarge'
