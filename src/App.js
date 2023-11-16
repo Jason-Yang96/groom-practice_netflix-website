@@ -30,7 +30,7 @@ function App() {
 					/>
 					<Route
 						path=':movieId'
-						element={<DetailPage />} //콜론이 사용되는 경우 dynamic한 요소가 된다.
+						element={<DetailPage />} //콜론이 사용되는 경우 dynamic한 요소가 된다. 기본 값에서 어떤 특정 수가 붙게 되면 movieID로 인식된다.
 					/>
 					<Route
 						path='search'

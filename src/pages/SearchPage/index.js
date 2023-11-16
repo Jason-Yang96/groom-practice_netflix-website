@@ -8,11 +8,12 @@ export default function SearchPage() {
 	const [searchResults, setSearchResults] = useState([]);
 	const navigate = useNavigate();
 	const useQuery = () => {
+		console.log('useLocation', useLocation()); // 현재 위치에 대한 객체 반환(pathname, search query)
 		return new URLSearchParams(useLocation().search);
 	};
 
-	// console.log(useQuery());
-	const searchTerm = useQuery().get('q');
+	console.log('usequery', useQuery());
+	const searchTerm = useQuery().get('q'); //search?q=asdfasfd 에서 asdfasfd 값을 가져온다
 	const debouncedSearchTerm = useDebounce(searchTerm, 500);
 	// console.log(query);
 	useEffect(() => {
