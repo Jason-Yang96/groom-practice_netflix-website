@@ -5,8 +5,8 @@ import axios from '../../api/axios';
 export default function DetailPage() {
 	const [movie, setMovie] = useState([]);
 	const { movieId } = useParams(); //Nav.js에서 movieId를 path에 지정했으므로, useParams의 값은 movieId 를 속성으로 가지는 객체가 주어진다.
-	console.log(movieId);
-	console.log('useparams', useParams());
+	// console.log(movieId);
+	// console.log('useparams', useParams());
 
 	useEffect(() => {
 		async function fetchData() {
